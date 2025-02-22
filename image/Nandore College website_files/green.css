@@ -1,0 +1,164 @@
+
+
+body{
+
+	padding: 0px;
+	margin: 0px;
+
+}
+
+
+
+#a{ 
+	width: 100%;
+	height:5px; 
+	padding:0;
+	margin-top:0;
+	position: relative;
+background-color: white;
+}
+
+
+#logo{
+	width:125px;
+	height: 120px;
+	margin-top: 0px ;
+	position: absolute;
+
+}
+.tname{margin-top: 0px;
+	margin-bottom: 0px;
+	text-decoration: screen;
+
+}
+.cadd{
+	margin-left: 150px; 
+}
+.cname{
+	align-content: center;
+	margin-left: 150px;
+	color: green;
+	margin-top: 0px;
+
+}
+.search{
+	float: right;
+	margin-top: 0px;
+	margin-right: 5px;
+
+}
+.search input{height: 30px;
+width: 250px;
+border:2px solid black;
+border-radius:10px; }
+
+.top{
+	position: relative;
+	float:left;
+	left: 50%;
+	align-content: center;
+	margin-top: 10px;
+	display: flex;
+
+}
+.n{
+	align-content: center;
+	
+	
+}
+.nav .navi{
+position: ;
+content:block;
+border: 2px solid #11ffbd;
+list-style: none;
+width: 100%;
+background-color:#bb377d;
+text-align: center;
+text-decoration: none;
+height: 40px;
+border-radius: 40px;
+
+
+
+
+}
+.nav {color:green;
+	border-radius: 50%;
+text-decoration: none;
+
+line-height: 40px;
+font-size: 20px;
+list-style-type:none;
+display: flex;
+text-align: center;
+padding:0px;
+float: left;
+width: 70%;
+background-color: white;
+position: relative;
+
+}
+
+a:link{
+	color:black;}
+a:visited{
+	color: black;}
+	a:active{
+	color:yellow;
+}
+a:hover{
+	color: white;
+	background-color: red;}
+	nav{position: fixed;
+top:30px;}
+
+.form .form1{
+	margin-top: 160px;
+	padding-top: 50px;
+}
+ .form1{
+ margin-left: 650px;
+ margin-right: 1px;
+}
+
+#b{margin-left: 5px;
+margin-top: 5px;
+align:left;
+width: 70%;
+float: left;
+padding-right: 10px;
+height: 480px;}
+
+.Gallery {color:green;
+	border-radius: 50%;
+text-decoration: none;
+line-height: 50px;
+font-size: 20px;
+list-style-type:none;
+display: flex;
+text-align: center;
+padding:0px;
+float: left;
+width: 70%;
+background-color: white;
+
+}
+
+.Gallery{
+	
+content:block;
+
+	border: 2px solid #11ffbd;
+list-style: none;
+width: 100%;
+background-color:#bb377d;
+text-align: center;
+text-decoration: none;
+height: 40px;
+}
+
+.contactus{
+	text-decoration: none;
+	color:black;
+
+}

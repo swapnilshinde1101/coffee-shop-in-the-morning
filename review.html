@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review</title>
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <!-- Custom CSS File Link -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a href="#" class="logo">coffee <i class="fas fa-mug-hot"></i></a>
+
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a href="menu.html">menu</a>
+            <a href="review.html">review</a>
+            <a href="book.html">book Table</a>
+            <a href="footer.html">Contact us</a>
+        </nav>
+
+        <div>
+            <a class="btn" onclick="openForm()">Admin Sign In</a>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div class="form-popup" id="myForm">
+            <form action="login.py" method="post" class="form-container">
+                <h1>Login</h1>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" id="eml" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="pwd" required>
+
+                <button type="button" class="btn" onclick="auth()">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+        <script>
+            function auth() {
+                var email = document.getElementById("eml").value;
+                var password = document.getElementById("pwd").value;
+                if (email === "coffee@gmail.com" && password === "123123") {
+                    window.location.assign("book.html");
+                    alert("Login Successfully!");
+                } else {
+                    alert("Please Enter Valid Data");
+                }
+            }
+
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+        </script>
+    </header>
+
+    <!-- REVIEW SECTION -->
+    <section class="review" id="review">
+        <h1 class="heading">reviews <span>what people say</span></h1>
+
+        <div class="swiper review-slider">
+            <div class="swiper-wrapper">
+
+                <!-- Review 1 -->
+                <div class="swiper-slide box">
+                    <i class="fas fa-quote-left"></i>
+                    <i class="fas fa-quote-right"></i>
+                    <img src="image/pic-1.png" alt="" />
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Omkar</h3>
+                    <p>"The service was excellent, and the staff was very attentive. I'll definitely be recommending this place to my friends!"</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="swiper-slide box">
+                    <i class="fas fa-quote-left"></i>
+                    <i class="fas fa-quote-right"></i>
+                    <img src="image/pic-2.png" alt="" />
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Emma</h3>
+                    <p>"I couldn't get enough of the pastries! Each bite was pure bliss. Can't wait to come back for more!"</p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="swiper-slide box">
+                    <i class="fas fa-quote-left"></i>
+                    <i class="fas fa-quote-right"></i>
+                    <img src="image/pic-3.png" alt="" />
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>David</h3>
+                    <p>"I was blown away by how delicious the coffee was! It's rare to find such high-quality coffee these days."</p>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="swiper-slide box">
+                    <i class="fas fa-quote-left"></i>
+                    <i class="fas fa-quote-right"></i>
+                    <img src="image/pic-4.png" alt="" />
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Emily</h3>
+                    <p>"The staff was incredibly friendly and made me feel right at home. It was a delightful experience from start to finish."</p>
+                </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- SWIPER -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.review-slider', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true,
+        });
+    </script>
+
+    <!-- Custom JS File Link -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

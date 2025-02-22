@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+   
+<!-- Font Awesome CDN Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+    <!-- Custom CSS File Link  -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div id="menu-btn" class="fas fa-bars"></div>
+
+      <a href="#" class="logo">coffee <i class="fas fa-mug-hot"></i></a>
+
+      <nav class="navbar">
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="menu.html">menu</a>
+        <a href="review.html">review</a>
+        <a href="book.html">book Table</a>
+        <a href="footer.html">Contact us</a>
+      </nav>
+
+
+      <div>
+        <a class="btn" onclick="openForm()">Admin Sign In</a>
+        <!-- <a class="btn">Admin Sign Up</a> -->
+      </div>      <div class="form-popup" id="myForm">
+        <form action="login.py" method="post" class="form-container">
+          <h1>Login</h1>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" id="eml" required>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" id="pwd" required>
+      
+          <button type="button" class="btn" onclick="auth()">Login</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
+      
+      <script>
+      
+      function auth(){
+      var email=document.getElementById("eml").value;
+      var password=document.getElementById("pwd").value;
+      if(email=="coffee@gmail.com" && password=="123123"){
+        window.location.assign("book.html")
+        alert("Login Successfully !")
+      }
+      else{
+        alert("Please Enter Valid Data")
+        return;
+      }
+    }
+
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+      </script>    </header>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about"><br><br> <br><br><br>
+        <h1 class="heading">about us <span>why choose us</span></h1>
+  
+        <div class="row">
+          <div class="image">
+            <img src="image/about-img.png" alt="" />
+          </div>
+  
+          <div class="content">
+            <h3 class="title">what's make our coffee special!</h3>
+            <p>
+              Our coffee is special because we start with the finest 
+              beans, sourced from around the world, and roast them to perfection.
+               Each cup is crafted with care and precision, ensuring a 
+               delightful experience with every sip. From the moment you smell
+               the aroma to the last drop, our passion for quality shines through. 
+               It's more than coffee; it's a taste of perfection.</p>
+            <!-- <a href="#" class="btn">read more</a> -->
+            <div class="icons-container">
+              <div class="icons">
+                <a href="menu.html"><img src="image/about-icon-1.png" alt="" /></a>
+                <h3>quality coffee</h3>
+              </div>
+              <div class="icons">
+                <a href="footer.html"><img src="image/about-icon-2.png" alt="" /></a>
+                <h3>our branches</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- SWIPER -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS File Link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

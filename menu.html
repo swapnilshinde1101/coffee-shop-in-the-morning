@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <!-- Custom CSS File Link -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <a href="#" class="logo">coffee <i class="fas fa-mug-hot"></i></a>
+
+        <nav class="navbar">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a href="menu.html">menu</a>
+            <a href="review.html">review</a>
+            <a href="book.html">book Table</a>
+            <a href="footer.html">Contact us</a>
+        </nav>
+
+        <div>
+            <a class="btn" onclick="openForm()">Admin Sign In</a>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div class="form-popup" id="myForm">
+            <form action="login.py" method="post" class="form-container">
+                <h1>Login</h1>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" id="eml" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="pwd" required>
+
+                <button type="button" class="btn" onclick="auth()">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+        <script>
+            function auth() {
+                var email = document.getElementById("eml").value;
+                var password = document.getElementById("pwd").value;
+                if (email === "coffee@gmail.com" && password === "123123") {
+                    window.location.assign("book.html")
+                    alert("Login Successfully!");
+                } else {
+                    alert("Please Enter Valid Data");
+                }
+            }
+
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+        </script>
+    </header>
+
+    <!-- MENU -->
+    <section class="menu" id="menu">
+        <h1 class="heading">our menu <span>popular menu</span></h1>
+
+        <div class="box-container">
+            <a href="book.html" class="box">
+                <img src="image/Espresso-PNG.png" alt="Espresso" />
+                <div class="content">
+                    <h3>Espresso</h3>
+                    <p>A bold and intense shot of coffee, perfect for a quick pick-me-up.</p>
+                    <span>₹80</span>
+                </div>
+            </a>
+
+            <a href="book.html" class="box">
+                <img src="image/latte.png" alt="Latte" />
+                <div class="content">
+                    <h3>Latte</h3>
+                    <p>Creamy espresso topped with steamed milk, offering a smooth and indulgent flavor.</p>
+                    <span>₹120</span>
+                </div>
+            </a>
+
+            <a href="book.html" class="box">
+                <img src="image/cappuccino_PNG.png" alt="Cappuccino" />
+                <div class="content">
+                    <h3>Cappuccino</h3>
+                    <p>A classic Italian coffee drink with equal parts espresso, steamed milk, and foam.</p>
+                    <span>₹100</span>
+                </div>
+            </a>
+
+            <a href="book.html" class="box">
+                <img src="image/Cold Brew.png" alt="Cold Brew" />
+                <div class="content">
+                    <h3>Cold Brew</h3>
+                    <p>Smooth and refreshing, our cold brew coffee is steeped for hours for a full-bodied flavor.</p>
+                    <span>₹150</span>
+                </div>
+            </a>
+
+            <a href="book.html" class="box">
+                <img src="image/mocha.png" alt="Mocha" />
+                <div class="content">
+                    <h3>Mocha</h3>
+                    <p>Indulge in the perfect blend of espresso, steamed milk, and chocolate syrup.</p>
+                    <span>₹130</span>
+                </div>
+            </a>
+
+            <a href="book.html" class="box">
+                <img src="image/masala-chai.png" alt="Masala Chai" />
+                <div class="content">
+                    <h3>Masala Chai</h3>
+                    <p>Aromatic black tea infused with spices like cardamom, cinnamon, ginger, and cloves, simmered with milk and sugar for a warm and flavorful experience.</p>
+                    <span>₹90</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- SWIPER -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS File Link -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

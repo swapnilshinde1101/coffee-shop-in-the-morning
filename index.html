@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee</title>
+
+  <!-- SWIPER -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+  <!-- Font Awesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <!-- Custom CSS File Link -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+</head>
+<body>
+ <!-- HEADER -->
+ <header class="header">
+  <div id="menu-btn" class="fas fa-bars"></div>
+  <a href="#" class="logo">coffee <i class="fas fa-mug-hot"></i></a>
+
+  <nav class="navbar">
+    <a href="#">home</a>
+    <a href="about.html">about</a>
+    <a href="menu.html">menu</a>
+    <a href="review.html">review</a>
+    <a href="book.html">book Table</a>
+    <a href="footer.html">Contact us</a>
+  </nav>
+
+  <div>
+    <a class="btn" onclick="openForm()" type="button">Admin Sign In</a>
+  </div>
+
+  <div class="form-popup" id="myForm">
+    <form action="/login" method="post" class="form-container">
+      <h1 style="color: #0d61ce;">Login</h1>
+
+      <label for="email"><b>Email</b></label><br>
+      <input type="email" placeholder="Enter Email" name="email" id="email" required><br><br>
+
+      <label for="password"><b>Password</b></label><br>
+      <input type="password" placeholder="Enter Password" name="password" id="password" required><br><br>
+
+      <button type="submit" class="btn">Login</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+</header>
+
+<!-- Flash Messages (success, error) -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul>
+      {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<!-- HOME -->
+<section class="home" id="home">
+  <div class="row">
+    <div class="content">
+      <h3>fresh coffee in the morning</h3>
+    </div>
+    <div class="image">
+      <img src="image/home-img-1.png" class="main-home-image" alt="Coffee Image" />
+    </div>
+  </div>
+  <div class="image-slider">
+    <img src="image/home-img-1.png" alt="Slider Image 1" />
+    <img src="image/home-img-2.png" alt="Slider Image 2" />
+    <img src="image/home-img-3.png" alt="Slider Image 3" />
+  </div>
+</section>
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
+
+<!-- SWIPER -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- Custom JS File Link  -->
+<script src="script.js"></script>
+</body>
+</html>
